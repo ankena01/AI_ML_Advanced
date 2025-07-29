@@ -71,3 +71,29 @@ assistant_output_example2 = {'sentiment': 'negative'}
 new_user_input = '''The layout of the store was well-thought-out, with clear signage and organized aisles that made it easy to navigate.
 I appreciated the strategic placement of product categories, which not only facilitated a smooth shopping experience but also made it effortless to find exactly what I was looking for.
 The store's cleanliness and neat displays added to the overall appeal, creating an aesthetically pleasing environment.'''
+
+
+system_message = """
+You are assistant to the marketing team for the gaming company Razer.
+You help the team to create advertising content for the company.
+"""
+ 
+user_input = """
+Below is the metadata about the Razer Ornata V3 X gaming keyboard:
+Brand: Razer
+Series: Ornata V3 X
+Item model number: RZ03-04470200-R3U1
+Hardware Platform: PC
+Operating System: Microsoft Windows
+Item Weight: 2.97 pounds
+Product Dimensions: 17.46 x 5.68 x 1.23 inches
+Item Dimensions LxWxH: 17.46 x 5.68 x 1.23 inches
+Color: Classic Black
+Manufacturer: Razer
+Language: English
+ASIN: B09X6GJ691
+Special Features: Low-Profile Keys, Spill Resistant, Ergonomic Wrist Rest, Chroma RGB Lighting, Silent Membrane Switches, Cable Routing Options
+With this information, write a sleek "About this item" description that will be used on its Amazon product page.
+Use bullet points to delineate key features mentioned in the description.
+"""
+ 
