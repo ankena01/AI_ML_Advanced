@@ -142,4 +142,4 @@ What was the increase in annual revenue in 2022 compared to 2021?
 Using the context presented above, rephrase and expand the above question to help you do better answering.
 Maintain all the information in the original question.
 Please note that you only have to rephrase the question, do not mention the context.
-The context is only presented for your reference.
+The context is only presented for your reference."""
