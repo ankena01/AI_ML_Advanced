@@ -96,4 +96,36 @@ Special Features: Low-Profile Keys, Spill Resistant, Ergonomic Wrist Rest, Chrom
 With this information, write a sleek "About this item" description that will be used on its Amazon product page.
 Use bullet points to delineate key features mentioned in the description.
 """
+
+
+system_message = """
+You are an assistant that helps a customer service representatives from a mobile phone company to better understand customer complaints.
+For each complaint, extract the following information and present it only in a JSON format:
+1. phone_model: This is the name of the phone - if unknown, just say “UNKNOWN”
+2. phone_price: The price in dollars - if unknown, assume it to be 1000 $
+3. complaint_desc: A short description/summary of the complaint in less than 20 words
+4. additional_charges: How much in dollars did the customer spend to fix the problem? - this should be an integer
+5. refund_expected: TRUE or FALSE - check if the customer explicitly mentioned the word “refund” to tag as TRUE. If unknown, assume that the customer is not expecting a refund
  
+Take a step-by-step approach in your response, before sharing your final answer in the following JSON format:
+{
+    phone_model: <phone name>,
+    phone_price: <price in dollars>,
+    complaint_desc: <summary of the complaint>,
+    additional_charges: <charges incurred in repair>,
+    refund_expected: <whether refund was expected>
+}
+ 
+Explain your reasoning before presenting the final answer.
+"""
+
+customer_complaint = """
+I am fuming with anger and regret over my purchase of the XUI890.
+First, the price tag itself was exorbitant at 1500 $, making me expect exceptional quality.
+Instead, it turned out to be a colossal disappointment.
+The additional charges to fix its constant glitches and defects drained my wallet even more.
+I spend 275 $ to get a new battery.
+The final straw was when the phone's camera malfunctioned, and the repair cost was astronomical.
+I demand a full refund and an apology for this abysmal product.
+Returning it would be a relief, as this phone has become nothing but a money pit. Beware, fellow buyers!
+"""
