@@ -129,3 +129,17 @@ The final straw was when the phone's camera malfunctioned, and the repair cost w
 I demand a full refund and an apology for this abysmal product.
 Returning it would be a relief, as this phone has become nothing but a money pit. Beware, fellow buyers!
 """
+
+rephrase_user_message = """
+Context:
+In 2022, we recognized total revenues of $81.46 billion, respectively, representing an increase of $27.64 billion, compared to the prior year.
+We continue to ramp production, build new manufacturing capacity and expand our operations to enable increased deliveries and deployments of our products and further revenue growth.
+===
+ 
+Question:
+What was the increase in annual revenue in 2022 compared to 2021?
+ 
+Using the context presented above, rephrase and expand the above question to help you do better answering.
+Maintain all the information in the original question.
+Please note that you only have to rephrase the question, do not mention the context.
+The context is only presented for your reference.
