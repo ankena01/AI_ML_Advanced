@@ -1,0 +1,73 @@
+system_message = """
+You are an assistant to a hospital administration team working on extracting important information from medical notes made by doctors.
+Medical notes will be presented to you in the user input.
+Extract relevant information as mentioned below in a json format with the following schema.
+- age: integer, age of the patient
+- gender: string, can be one of male, female or other
+- diagnosis: string, can be one of migraine, diabetes, arthritis and acne
+- weight: integer, weight of the patient
+- smoking: string, can be one of yes or no
+"""
+ 
+user_input = '''Medical Notes:
+---
+A 35-year-old male patient, Mr. Nags, presented with symptoms
+of increased thirst, frequent urination, fatigue, and unexplained
+weight loss. Upon evaluation, he was diagnosed with diabetes,
+confirmed by elevated blood sugar levels. Mr. Nags' weight
+is 80 kgs. He has been prescribed Metformin to be taken twice daily
+with meals. It was noted during the consultation that the patient is
+a current smoker.
+'''
+
+user_input = '''Patient Name: Ms. Krishnaveni
+Age: 45 years
+Gender: Female
+ 
+Chief Complaint:
+Ms. Krishnaveni presented with complaints of persistent abdominal pain, bloating, and changes in bowel habits over the past two months.
+ 
+History of Present Illness:
+Ms. Krishnaveni reports experiencing intermittent abdominal pain, predominantly in the lower abdomen, accompanied by bloating and alternating episodes of diarrhea and constipation. She describes the pain as crampy in nature, relieved partially by defecation but worsening after meals. There is no association with specific food items. She denies any rectal bleeding, unintended weight loss, or fever.
+ 
+Past Medical History:
+Ms. Krishnaveni has a history of irritable bowel syndrome (IBS), diagnosed five years ago, managed with dietary modifications and occasional use of over-the-counter antispasmodics.
+ 
+Medications:
+She occasionally takes over-the-counter antispasmodics for symptomatic relief of abdominal discomfort related to IBS.
+ 
+Family History:
+There is no significant family history of gastrointestinal disorders or malignancies.
+ 
+Social History:
+Ms. Krishnaveni is a non-smoker and does not consume alcohol. She works as a teacher in a local school.'''
+
+few_shot_system_message = """
+Classify customer reviews in the input as positive or negative in sentiment.
+Do not explain your answer. Your answer should only contain the label: positive or negative.
+"""
+
+user_input_example1 = '''I couldn't be happier with my experience at your store!
+The staff went above and beyond to assist me, providing exceptional customer service.
+They were friendly, knowledgeable, and genuinely eager to help.
+The product I purchased exceeded my expectations and was exactly what I was looking for.
+From start to finish, everything was seamless and enjoyable.
+I will definitely be returning and recommending your store to all my friends and family.
+Thank you for making my shopping experience so wonderful!'''
+
+assistant_output_example1 = '{'sentiment': 'positive'}'
+
+
+user_input_example2 = '''I am extremely disappointed with the service I received at your store!
+The staff was rude and unhelpful, showing no regard for my concerns.
+Not only did they ignore my requests for assistance, but they also had the audacity to speak to me condescendingly.
+It's clear that your company values profit over customer satisfaction.
+I will never shop here again and will make sure to spread the word about my awful experience.
+You've lost a loyal customer, and I hope others steer clear of your establishment!'''
+
+assistant_output_example2 = {'sentiment': 'negative'}
+
+
+new_user_input = '''The layout of the store was well-thought-out, with clear signage and organized aisles that made it easy to navigate.
+I appreciated the strategic placement of product categories, which not only facilitated a smooth shopping experience but also made it effortless to find exactly what I was looking for.
+The store's cleanliness and neat displays added to the overall appeal, creating an aesthetically pleasing environment.'''
