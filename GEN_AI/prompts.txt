@@ -143,3 +143,24 @@ Using the context presented above, rephrase and expand the above question to hel
 Maintain all the information in the original question.
 Please note that you only have to rephrase the question, do not mention the context.
 The context is only presented for your reference."""
+
+
+
+
+response_user_message = """
+Context:
+In 2022, we recognized total revenues of $81.46 billion, respectively, representing an increase of $27.64 billion, compared to the prior year.
+We continue to ramp production, build new manufacturing capacity and expand our operations to enable increased deliveries and deployments of our products and further revenue growth.
+===
+ 
+Original Question:
+What was the increase in annual revenue in 2022 compared to 2021?
+ 
+Rephrased Question:
+What was the difference in total revenues between 2022 and 2021, and how much did it increase in 2022 compared to the previous year?
+ 
+Given the above context, use your answer for the rephrased question presented above to answer the original question.
+Present your final answer in the following format.
+Final Answer: <your-final-answer>
+"""
+ 
