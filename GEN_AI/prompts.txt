@@ -207,6 +207,50 @@ Instructions:
 3. Next, evaluate the extent to which the metric is followed.
 4. Use the previous information to rate the summary using the evaluaton criteria and assign a score.
 """
+
+
+-------------- Tree of Thought --------------
+
+solutions_template = """
+Generate {num_solutions} distinct solutions for the following problem:
+Problem:
+{problem}.
+--
+ 
+Consider the following factors in coming up with your solutions.
+Factors:
+{factors}
+ 
+Present the solutions in numbered bullet points. Present only the solutions.
+"""
+ 
+climate_problem = "Reduce the impact of climate change on the occurrence of extreme events in the Earth's atmosphere."
+ 
+climate_factors = """
+1. Renewable Energy Transition
+2. Reforestation
+3. Sustainable Agricultural Practises
+4. Carbon capture and storage
+5. Climate-resilient infrastructure
+6. Circular economy practises
+"""
+ 
+solutions_prompt = [
+     {
+         'role': 'user',
+         'content': solutions_template.format(
+             num_solutions=3,
+             problem=climate_problem,
+             factors=climate_factors
+         )
+     }
+]
+ 
+evaluation_template = """
+For the following problem: {problem}, evaluate each solution in the following proposed solutions: \n{solutions}\n.
+Analyze pros, cons, feasibility, and probability of success for each solution.
+Present your evaluations of each solutions.
+"""
  
 ranking_template = """
 For the following problem: {problem}, rank the solutions presented in the following evaluations: \n{evaluations}\n.
