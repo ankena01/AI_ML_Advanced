@@ -163,4 +163,53 @@ Given the above context, use your answer for the rephrased question presented ab
 Present your final answer in the following format.
 Final Answer: <your-final-answer>
 """
+
+----------------------------------------------------------------------------
+
+ example_dialogue = """
+Dialogue:
+#Person1#: Excuse me, could you tell me where physics 403 is? Has it been moved?
+#Person2#: OK. Let me check on the computer. Err I'm sorry, but it says here that the class was cancelled. You should have got a notice letter about this.
+#Person1#: What? I never got it.
+#Person2#: Are you sure? It says on the computer that the letter was sent out to the students a week ago.
+#Person1#: Really? I should have got it by now. I wonder if I threw it away with all the junk mail by mistake.
+#Person2#: Well, it does happen. Err let me check something. What's your name?
+#Person1#: Woodhouse Laura Woodhouse.
+#Person2#: OK, Woodhouse. Let me see. Ah, it says here we sent it to your apartment on the Center Street.
+#Person1#: Oh, that's my old apartment. I moved out of there a little while ago.
+#Person2#: Well, I suppose you haven't changed your mailing address at the administration office.
+#Person1#: Yeah, I should have changed it in time.
+ 
+example_summary = """
+Summary:
+Laura Woodhouse finds out physics is canceled but she never received the mail. #Person2# finds her mailing address is her old apartment. Laura thinks she should have changed it in time.
+"""
+ 
+rater_system_message = """
+You are tasked with rating AI-generated summaries of dialogues based on the given metric.
+You will be presented a dialogue and an AI generated summary of the dialogue as the input.
+In the input, the dialogue will begin with ###Dialogue while the AI generated summary will begin with ###Summary.
+ 
+Evaluation criteria:
+The task is to judge the extent to which the metric is followed by the summary.
+1 - The metric is not followed at all
+2 - The metric is followed only to a limited extent
+3 - The metric is followed to a good extent
+4 - The metric is followed mostly
+5 - The metric is followed completely
+ 
+Metric:
+The summary should cover all the aspects that are majorly being discussed in the dialogue.
+ 
+Instructions:
+1. First write down the steps that are needed to evaluate the summary as per the metric.
+2. Give a step-by-step explanation if the summary adheres to the metric considering the dialogues as the input.
+3. Next, evaluate the extent to which the metric is followed.
+4. Use the previous information to rate the summary using the evaluaton criteria and assign a score.
+"""
+ 
+ranking_template = """
+For the following problem: {problem}, rank the solutions presented in the following evaluations: \n{evaluations}\n.
+Pick most promising solution and present implementation strategies and methods to handle potential obstacles for this solution.
+"""
  
